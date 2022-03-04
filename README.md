@@ -1,4 +1,4 @@
-# Network-Craft III
+# NetworkCraft III
 #### CS 480 Capstone Design by Heath Thompson, Maxwell Icardo, Matt Morrison
 
 ## Mission 

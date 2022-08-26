@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "router",
+        "1": "antenna"
+      },
+      "name": "default"
+    }
+  }
+}

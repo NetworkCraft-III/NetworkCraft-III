@@ -1,0 +1,9 @@
+{
+  "parent": "netcraft:custom/router",
+  "textures": {
+    "all": "netcraft:blocks/router",
+    "particle": "netcraft:blocks/router",
+    "0": "netcraft:blocks/router",
+    "1": "netcraft:blocks/antenna"
+  }
+}

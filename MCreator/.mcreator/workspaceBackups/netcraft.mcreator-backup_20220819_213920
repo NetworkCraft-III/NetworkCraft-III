@@ -1,0 +1,41 @@
+{
+  "mod_elements": [
+    {
+      "name": "Router",
+      "type": "block",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "router"
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "block.netcraft.router": "Router"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "netcraft",
+    "modName": "NetCraft",
+    "version": "1.0.0",
+    "author": "mattmorrison, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.18.2",
+    "modElementsPackage": "net.mcreator.netcraft",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202200233511
+}

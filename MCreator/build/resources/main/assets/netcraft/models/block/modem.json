@@ -1,8 +1,0 @@
-{
-  "parent": "netcraft:custom/modem",
-  "textures": {
-    "all": "netcraft:blocks/modem",
-    "particle": "netcraft:blocks/modem",
-    "0": "netcraft:blocks/modem"
-  }
-}

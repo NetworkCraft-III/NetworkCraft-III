@@ -1,8 +1,0 @@
-{
-  "parent": "netcraft:custom/netswitch",
-  "textures": {
-    "all": "netcraft:blocks/netswitch",
-    "particle": "netcraft:blocks/netswitch",
-    "0": "netcraft:blocks/netswitch"
-  }
-}

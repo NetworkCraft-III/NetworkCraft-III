@@ -1,0 +1,8 @@
+{
+  "parent": "networkcraftiii:custom/modem",
+  "textures": {
+    "all": "networkcraftiii:blocks/modem",
+    "particle": "networkcraftiii:blocks/modem",
+    "0": "networkcraftiii:blocks/modem"
+  }
+}

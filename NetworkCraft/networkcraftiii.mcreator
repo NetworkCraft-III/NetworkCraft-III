@@ -1,9 +1,29 @@
 {
-  "mod_elements": [],
+  "mod_elements": [
+    {
+      "name": "Modem",
+      "type": "block",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "modem"
+    },
+    {
+      "name": "Router",
+      "type": "block",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "router"
+    }
+  ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
-    "en_us": {}
+    "en_us": {
+      "block.networkcraftiii.modem": "Modem",
+      "block.networkcraftiii.router": "Router"
+    }
   },
   "foldersRoot": {
     "name": "~",

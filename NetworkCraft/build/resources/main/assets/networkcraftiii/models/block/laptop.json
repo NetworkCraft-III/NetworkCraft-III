@@ -1,0 +1,9 @@
+{
+  "parent": "networkcraftiii:custom/laptop",
+  "textures": {
+    "all": "networkcraftiii:blocks/laptopb",
+    "particle": "networkcraftiii:blocks/laptopb",
+    "0": "networkcraftiii:blocks/laptop",
+    "1": "networkcraftiii:blocks/laptopb"
+  }
+}

@@ -16,12 +16,14 @@ import net.minecraft.world.level.block.Block;
 
 import net.mcreator.networkcraftiii.block.RouterBlock;
 import net.mcreator.networkcraftiii.block.ModemBlock;
+import net.mcreator.networkcraftiii.block.LaptopBlock;
 import net.mcreator.networkcraftiii.NetworkcraftiiiMod;
 
 public class NetworkcraftiiiModBlocks {
 	public static final DeferredRegister<Block> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, NetworkcraftiiiMod.MODID);
 	public static final RegistryObject<Block> MODEM = REGISTRY.register("modem", () -> new ModemBlock());
 	public static final RegistryObject<Block> ROUTER = REGISTRY.register("router", () -> new RouterBlock());
+	public static final RegistryObject<Block> LAPTOP = REGISTRY.register("laptop", () -> new LaptopBlock());
 
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 	public static class ClientSideHandler {
@@ -29,6 +31,7 @@ public class NetworkcraftiiiModBlocks {
 		public static void clientSetup(FMLClientSetupEvent event) {
 			ModemBlock.registerRenderLayer();
 			RouterBlock.registerRenderLayer();
+			LaptopBlock.registerRenderLayer();
 		}
 	}
 }

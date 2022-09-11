@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "laptop",
+        "1": "laptopb"
+      },
+      "name": "default"
+    }
+  }
+}

@@ -15,6 +15,14 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "router"
+    },
+    {
+      "name": "Laptop",
+      "type": "block",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "laptop"
     }
   ],
   "variable_elements": [],
@@ -22,6 +30,7 @@
   "language_map": {
     "en_us": {
       "block.networkcraftiii.modem": "Modem",
+      "block.networkcraftiii.laptop": "Laptop",
       "block.networkcraftiii.router": "Router"
     }
   },

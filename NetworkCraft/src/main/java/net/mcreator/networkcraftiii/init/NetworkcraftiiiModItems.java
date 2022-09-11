@@ -20,6 +20,7 @@ public class NetworkcraftiiiModItems {
 	public static final RegistryObject<Item> MODEM = block(NetworkcraftiiiModBlocks.MODEM, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Item> ROUTER = block(NetworkcraftiiiModBlocks.ROUTER, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Item> LAPTOP = block(NetworkcraftiiiModBlocks.LAPTOP, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Item> CABLE = block(NetworkcraftiiiModBlocks.CABLE, CreativeModeTab.TAB_BUILDING_BLOCKS);
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block, CreativeModeTab tab) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));

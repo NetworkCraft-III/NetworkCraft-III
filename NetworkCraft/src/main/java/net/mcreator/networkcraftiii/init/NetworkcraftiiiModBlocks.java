@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.Block;
 import net.mcreator.networkcraftiii.block.RouterBlock;
 import net.mcreator.networkcraftiii.block.ModemBlock;
 import net.mcreator.networkcraftiii.block.LaptopBlock;
+import net.mcreator.networkcraftiii.block.CableBlock;
 import net.mcreator.networkcraftiii.NetworkcraftiiiMod;
 
 public class NetworkcraftiiiModBlocks {
@@ -24,6 +25,7 @@ public class NetworkcraftiiiModBlocks {
 	public static final RegistryObject<Block> MODEM = REGISTRY.register("modem", () -> new ModemBlock());
 	public static final RegistryObject<Block> ROUTER = REGISTRY.register("router", () -> new RouterBlock());
 	public static final RegistryObject<Block> LAPTOP = REGISTRY.register("laptop", () -> new LaptopBlock());
+	public static final RegistryObject<Block> CABLE = REGISTRY.register("cable", () -> new CableBlock());
 
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 	public static class ClientSideHandler {
@@ -32,6 +34,7 @@ public class NetworkcraftiiiModBlocks {
 			ModemBlock.registerRenderLayer();
 			RouterBlock.registerRenderLayer();
 			LaptopBlock.registerRenderLayer();
+			CableBlock.registerRenderLayer();
 		}
 	}
 }

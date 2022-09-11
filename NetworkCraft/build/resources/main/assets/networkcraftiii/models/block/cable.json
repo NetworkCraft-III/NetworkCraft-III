@@ -1,0 +1,8 @@
+{
+  "parent": "networkcraftiii:custom/cable",
+  "textures": {
+    "all": "networkcraftiii:blocks/cable",
+    "particle": "networkcraftiii:blocks/cable",
+    "0": "networkcraftiii:blocks/cable"
+  }
+}

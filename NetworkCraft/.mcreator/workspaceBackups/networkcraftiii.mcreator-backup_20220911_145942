@@ -23,14 +23,6 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "laptop"
-    },
-    {
-      "name": "Cable",
-      "type": "block",
-      "sortid": 4,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "cable"
     }
   ],
   "variable_elements": [],
@@ -39,8 +31,7 @@
     "en_us": {
       "block.networkcraftiii.modem": "Modem",
       "block.networkcraftiii.laptop": "Laptop",
-      "block.networkcraftiii.router": "Router",
-      "block.networkcraftiii.cable": "Cable"
+      "block.networkcraftiii.router": "Router"
     }
   },
   "foldersRoot": {

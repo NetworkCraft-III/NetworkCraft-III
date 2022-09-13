@@ -2,9 +2,7 @@
 .mcreator
 .settings
 build/
-run/options
-run/server
-run/servers
+run/
 .classpath
 .DS
 .project

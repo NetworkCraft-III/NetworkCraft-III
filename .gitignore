@@ -1,0 +1,8 @@
+.gradle
+.mcreator
+.settings
+build
+.classpath
+.DS
+gradlew
+

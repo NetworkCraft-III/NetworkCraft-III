@@ -1,13 +1,11 @@
 .gradle
 .mcreator
 .settings
-build
+build/
 run/options
 run/server
 run/servers
 .classpath
 .DS
-gradlew
-mcreator
 .project
 

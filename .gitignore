@@ -1,9 +1,13 @@
-NetworkCraft/.gradle
-NetworkCraft/.mcreator
-NetworkCraft/.settings
-NetworkCraft/build
-NetworkCraft/.classpath
-NetworkCraft/.DS
-NetworkCraft/gradlew
+.gradle
+.mcreator
+.settings
+build
+run/options
+run/server
+run/servers
+.classpath
 .DS
+gradlew
+mcreator
+.project
 

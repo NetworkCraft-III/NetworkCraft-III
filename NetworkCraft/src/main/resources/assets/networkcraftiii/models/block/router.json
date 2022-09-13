@@ -1,9 +1,0 @@
-{
-  "parent": "networkcraftiii:custom/router",
-  "textures": {
-    "all": "networkcraftiii:blocks/router",
-    "particle": "networkcraftiii:blocks/router",
-    "0": "networkcraftiii:blocks/router",
-    "1": "networkcraftiii:blocks/antenna"
-  }
-}

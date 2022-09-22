@@ -1,0 +1,44 @@
+{
+  "_fv": 33,
+  "_type": "overlay",
+  "definition": {
+    "priority": "NORMAL",
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "",
+          "x": 69,
+          "y": 172
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:NumLaptops>",
+          "color": {
+            "value": -3498,
+            "falpha": 0.0
+          },
+          "name": "<VAR:NumLaptops>",
+          "x": 329,
+          "y": 6
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "gridSettings": {
+      "sx": 10,
+      "sy": 10,
+      "ox": 1,
+      "oy": 10,
+      "snapOnGrid": false
+    }
+  }
+}

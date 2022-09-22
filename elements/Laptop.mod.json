@@ -106,7 +106,7 @@
     "particleSpawningShape": "Spread",
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
-    "hasInventory": false,
+    "hasInventory": true,
     "guiBoundTo": "<NONE>",
     "openGUIOnRightClick": false,
     "inventorySize": 9,
@@ -123,6 +123,18 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onRightClicked": {
+      "name": "LaptopOnBlockRightClickedOpenGUI"
+    },
+    "onBlockAdded": {
+      "name": "LaptopBlockAdded"
+    },
+    "onDestroyedByPlayer": {
+      "name": "LaptopBlockDestroyed"
+    },
+    "onDestroyedByExplosion": {
+      "name": "LaptopBlockDestroyed"
+    },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
     "blocksToReplace": [

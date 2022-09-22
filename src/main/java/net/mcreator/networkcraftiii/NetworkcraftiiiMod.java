@@ -28,6 +28,7 @@ import net.minecraft.network.FriendlyByteBuf;
 
 import net.mcreator.networkcraftiii.init.NetworkcraftiiiModItems;
 import net.mcreator.networkcraftiii.init.NetworkcraftiiiModBlocks;
+import net.mcreator.networkcraftiii.init.NetworkcraftiiiModBlockEntities;
 
 import java.util.function.Supplier;
 import java.util.function.Function;
@@ -47,6 +48,8 @@ public class NetworkcraftiiiMod {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		NetworkcraftiiiModBlocks.REGISTRY.register(bus);
 		NetworkcraftiiiModItems.REGISTRY.register(bus);
+
+		NetworkcraftiiiModBlockEntities.REGISTRY.register(bus);
 
 	}
 

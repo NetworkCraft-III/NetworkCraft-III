@@ -1,0 +1,102 @@
+{
+  "_fv": 33,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 119,
+    "height": 89,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "text": "Turn On",
+          "onClick": {
+            "name": "TurnLaptopOn"
+          },
+          "width": 61,
+          "height": 20,
+          "name": "Turn On",
+          "x": 182,
+          "y": 111
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Turn Off",
+          "onClick": {
+            "name": "TurnLaptopOff"
+          },
+          "width": 66,
+          "height": 20,
+          "name": "Turn Off",
+          "x": 180,
+          "y": 136
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Laptop:",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Laptop:",
+          "x": 172,
+          "y": 85
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:integer:LaptopID>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:integer:LaptopID>",
+          "x": 213,
+          "y": 85
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Status:",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Status:",
+          "x": 183,
+          "y": 98
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:text:status>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:text:status>",
+          "x": 223,
+          "y": 98
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

@@ -11,6 +11,7 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.client.gui.screens.MenuScreens;
 
+import net.mcreator.networkcraftiii.client.gui.RouterGUIScreen;
 import net.mcreator.networkcraftiii.client.gui.LaptopGUIScreen;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -19,6 +20,7 @@ public class NetworkcraftiiiModScreens {
 	public static void clientLoad(FMLClientSetupEvent event) {
 		event.enqueueWork(() -> {
 			MenuScreens.register(NetworkcraftiiiModMenus.LAPTOP_GUI, LaptopGUIScreen::new);
+			MenuScreens.register(NetworkcraftiiiModMenus.ROUTER_GUI, RouterGUIScreen::new);
 		});
 	}
 }

@@ -29,6 +29,19 @@
           "x": 329,
           "y": 6
         }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:NumRouters>",
+          "color": {
+            "value": -256,
+            "falpha": 0.0
+          },
+          "name": "<VAR:NumRouters>",
+          "x": 329,
+          "y": 20
+        }
       }
     ],
     "baseTexture": "",

@@ -3,41 +3,13 @@
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 119,
-    "height": 89,
+    "width": 135,
+    "height": 73,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
     "doesPauseGame": false,
     "components": [
-      {
-        "type": "button",
-        "data": {
-          "text": "Turn On",
-          "onClick": {
-            "name": "TurnLaptopOn"
-          },
-          "width": 61,
-          "height": 20,
-          "name": "Turn On",
-          "x": 182,
-          "y": 111
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Turn Off",
-          "onClick": {
-            "name": "TurnLaptopOff"
-          },
-          "width": 66,
-          "height": 20,
-          "name": "Turn Off",
-          "x": 180,
-          "y": 136
-        }
-      },
       {
         "type": "label",
         "data": {
@@ -48,7 +20,7 @@
           },
           "name": "Laptop:",
           "x": 172,
-          "y": 85
+          "y": 90
         }
       },
       {
@@ -60,8 +32,8 @@
             "falpha": 0.0
           },
           "name": "<BNBT:integer:LaptopID>",
-          "x": 213,
-          "y": 85
+          "x": 214,
+          "y": 90
         }
       },
       {
@@ -73,8 +45,8 @@
             "falpha": 0.0
           },
           "name": "Status:",
-          "x": 183,
-          "y": 98
+          "x": 172,
+          "y": 102
         }
       },
       {
@@ -86,8 +58,75 @@
             "falpha": 0.0
           },
           "name": "<BNBT:text:status>",
-          "x": 223,
-          "y": 98
+          "x": 214,
+          "y": 102
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Internet:",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Internet:",
+          "x": 162,
+          "y": 113
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:logic:internet>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:logic:internet>",
+          "x": 214,
+          "y": 113
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "On",
+          "onClick": {
+            "name": "TurnLaptopOn"
+          },
+          "width": 35,
+          "height": 20,
+          "name": "On",
+          "x": 194,
+          "y": 128
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Off",
+          "onClick": {
+            "name": "TurnLaptopOff"
+          },
+          "width": 40,
+          "height": 20,
+          "name": "Off",
+          "x": 232,
+          "y": 128
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Laptop:",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Laptop:",
+          "x": 155,
+          "y": 133
         }
       }
     ],

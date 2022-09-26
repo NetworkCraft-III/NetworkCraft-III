@@ -1,0 +1,182 @@
+{
+  "_fv": 33,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 143,
+    "height": 98,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Router:",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Router:",
+          "x": 156,
+          "y": 78
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:integer:routerID>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:integer:routerID>",
+          "x": 198,
+          "y": 78
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Router Status:",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Router Status:",
+          "x": 156,
+          "y": 90
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:text:routerStatus>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:text:routerStatus>",
+          "x": 234,
+          "y": 90
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Internet Status:",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Internet Status:",
+          "x": 155,
+          "y": 102
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:text:internetStatus>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:text:internetStatus>",
+          "x": 244,
+          "y": 102
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Internet:",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Internet:",
+          "x": 148,
+          "y": 122
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Router:",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Router:",
+          "x": 158,
+          "y": 145
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "On",
+          "onClick": {
+            "name": "TurnRouterOn"
+          },
+          "width": 35,
+          "height": 20,
+          "name": "On",
+          "x": 198,
+          "y": 140
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Off",
+          "onClick": {
+            "name": "TurnRouterOff"
+          },
+          "width": 40,
+          "height": 20,
+          "name": "Off",
+          "x": 236,
+          "y": 140
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "On",
+          "onClick": {
+            "name": "ProvideInternet"
+          },
+          "width": 35,
+          "height": 20,
+          "name": "On",
+          "x": 198,
+          "y": 117
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Off",
+          "onClick": {
+            "name": "RemoveInternet"
+          },
+          "width": 40,
+          "height": 20,
+          "name": "Off",
+          "x": 236,
+          "y": 117
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

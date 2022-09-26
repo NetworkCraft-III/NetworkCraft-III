@@ -39,15 +39,24 @@ public class TurnLaptopOnProcedure {
 				if (world instanceof Level _level)
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
+			if (!world.isClientSide()) {
+				BlockPos _bp = new BlockPos(x, y, z);
+				BlockEntity _blockEntity = world.getBlockEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_blockEntity != null)
+					_blockEntity.getTileData().putBoolean("internet", (false));
+				if (world instanceof Level _level)
+					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+			}
 			if (entity instanceof Player _player && !_player.level.isClientSide())
-				_player.displayClientMessage(new TextComponent(("Successfully turned laptop on. Block State: " + (new Object() {
-					public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+				_player.displayClientMessage(new TextComponent(("Successfully turned laptop " + (new Object() {
+					public double getValue(LevelAccessor world, BlockPos pos, String tag) {
 						BlockEntity blockEntity = world.getBlockEntity(pos);
 						if (blockEntity != null)
-							return blockEntity.getTileData().getBoolean(tag);
-						return false;
+							return blockEntity.getTileData().getDouble(tag);
+						return -1;
 					}
-				}.getValue(world, new BlockPos(x, y, z), "isOn")))), (false));
+				}.getValue(world, new BlockPos(x, y, z), "LaptopID")) + " on")), (false));
 		}
 		if (entity instanceof Player _player)
 			_player.closeContainer();

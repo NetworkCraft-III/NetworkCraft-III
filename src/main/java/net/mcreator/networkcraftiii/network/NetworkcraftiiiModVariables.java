@@ -59,6 +59,7 @@ public class NetworkcraftiiiModVariables {
 		public static final String DATA_NAME = "networkcraftiii_worldvars";
 		public double NumLaptops = 0;
 		public String userMessage = "\"Initial\"";
+		public double NumRouters = 0;
 
 		public static WorldVariables load(CompoundTag tag) {
 			WorldVariables data = new WorldVariables();
@@ -69,12 +70,14 @@ public class NetworkcraftiiiModVariables {
 		public void read(CompoundTag nbt) {
 			NumLaptops = nbt.getDouble("NumLaptops");
 			userMessage = nbt.getString("userMessage");
+			NumRouters = nbt.getDouble("NumRouters");
 		}
 
 		@Override
 		public CompoundTag save(CompoundTag nbt) {
 			nbt.putDouble("NumLaptops", NumLaptops);
 			nbt.putString("userMessage", userMessage);
+			nbt.putDouble("NumRouters", NumRouters);
 			return nbt;
 		}
 

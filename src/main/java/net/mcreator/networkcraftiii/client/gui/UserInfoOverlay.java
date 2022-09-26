@@ -43,6 +43,8 @@ public class UserInfoOverlay {
 				Minecraft.getInstance().font.draw(event.getMatrixStack(), "", posX + -144, posY + 52, -12829636);
 				Minecraft.getInstance().font.draw(event.getMatrixStack(),
 						"" + (NetworkcraftiiiModVariables.WorldVariables.get(world).NumLaptops) + "", posX + 116, posY + -114, -3498);
+				Minecraft.getInstance().font.draw(event.getMatrixStack(),
+						"" + (NetworkcraftiiiModVariables.WorldVariables.get(world).NumRouters) + "", posX + 116, posY + -100, -256);
 			}
 		}
 	}

@@ -396,23 +396,6 @@
       "path": "~/Router"
     },
     {
-      "name": "RouterBlockDestroyed",
-      "type": "procedure",
-      "sortid": 27,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "router_block_destroyed",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Router"
-    },
-    {
       "name": "ProvideInternet",
       "type": "procedure",
       "sortid": 28,
@@ -458,6 +441,35 @@
             "name": "entity",
             "type": "entity"
           },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Router"
+    },
+    {
+      "name": "RouterBlockDestroyed",
+      "type": "procedure",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "router_block_destroyed",
+      "metadata": {
+        "dependencies": [
           {
             "name": "x",
             "type": "number"

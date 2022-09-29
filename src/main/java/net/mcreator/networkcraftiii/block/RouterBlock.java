@@ -74,14 +74,14 @@ public class RouterBlock extends Block
 	@Override
 	public boolean onDestroyedByPlayer(BlockState blockstate, Level world, BlockPos pos, Player entity, boolean willHarvest, FluidState fluid) {
 		boolean retval = super.onDestroyedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
-		RouterBlockDestroyedProcedure.execute(world);
+		RouterBlockDestroyedProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 		return retval;
 	}
 
 	@Override
 	public void wasExploded(Level world, BlockPos pos, Explosion e) {
 		super.wasExploded(world, pos, e);
-		RouterBlockDestroyedProcedure.execute(world);
+		RouterBlockDestroyedProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	@Override

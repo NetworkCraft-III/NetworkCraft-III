@@ -44,12 +44,12 @@ public class RemoveInternetProcedure {
 				if (world instanceof Level _level)
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
-			sx = -20;
-			for (int index0 = 0; index0 < (int) (40); index0++) {
-				sy = -20;
-				for (int index1 = 0; index1 < (int) (40); index1++) {
-					sz = -20;
-					for (int index2 = 0; index2 < (int) (40); index2++) {
+			sx = -10;
+			for (int index0 = 0; index0 < (int) (20); index0++) {
+				sy = -10;
+				for (int index1 = 0; index1 < (int) (20); index1++) {
+					sz = -10;
+					for (int index2 = 0; index2 < (int) (20); index2++) {
 						if ((world.getBlockState(new BlockPos(x + sx, y + sy, z + sz))).getBlock() == NetworkcraftiiiModBlocks.LAPTOP.get()
 								&& (new Object() {
 									public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
@@ -58,9 +58,9 @@ public class RemoveInternetProcedure {
 											return blockEntity.getTileData().getBoolean(tag);
 										return false;
 									}
-								}.getValue(world, new BlockPos(x, y, z), "isOn")) == true) {
+								}.getValue(world, new BlockPos(x + sx, y + sy, z + sz), "isOn")) == true) {
 							if (!world.isClientSide()) {
-								BlockPos _bp = new BlockPos(x, y, z);
+								BlockPos _bp = new BlockPos(x + sx, y + sy, z + sz);
 								BlockEntity _blockEntity = world.getBlockEntity(_bp);
 								BlockState _bs = world.getBlockState(_bp);
 								if (_blockEntity != null)

@@ -58,9 +58,9 @@ public class ProvideInternetProcedure {
 											return blockEntity.getTileData().getBoolean(tag);
 										return false;
 									}
-								}.getValue(world, new BlockPos(x, y, z), "isOn")) == true) {
+								}.getValue(world, new BlockPos(x + sx, y + sy, z + sz), "isOn")) == true) {
 							if (!world.isClientSide()) {
-								BlockPos _bp = new BlockPos(x, y, z);
+								BlockPos _bp = new BlockPos(x + sx, y + sy, z + sz);
 								BlockEntity _blockEntity = world.getBlockEntity(_bp);
 								BlockState _bs = world.getBlockState(_bp);
 								if (_blockEntity != null)

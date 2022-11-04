@@ -3,8 +3,8 @@
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 135,
-    "height": 73,
+    "width": 187,
+    "height": 80,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -13,27 +13,27 @@
       {
         "type": "label",
         "data": {
-          "text": "Laptop:",
+          "text": "MAC:",
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Laptop:",
-          "x": 172,
-          "y": 90
+          "name": "MAC:",
+          "x": 157,
+          "y": 86
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "<BNBT:integer:LaptopID>",
+          "text": "<BNBT:text:macAddress>",
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "<BNBT:integer:LaptopID>",
-          "x": 214,
-          "y": 90
+          "name": "<BNBT:text:macAddress>",
+          "x": 183,
+          "y": 86
         }
       },
       {
@@ -45,8 +45,8 @@
             "falpha": 0.0
           },
           "name": "Status:",
-          "x": 172,
-          "y": 102
+          "x": 161,
+          "y": 119
         }
       },
       {
@@ -58,34 +58,34 @@
             "falpha": 0.0
           },
           "name": "<BNBT:text:status>",
-          "x": 214,
-          "y": 102
+          "x": 202,
+          "y": 119
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "Internet:",
+          "text": "Router IP:",
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Internet:",
-          "x": 162,
-          "y": 113
+          "name": "Router IP:",
+          "x": 145,
+          "y": 97
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "<BNBT:logic:internet>",
+          "text": "<BNBT:text:routerIP>",
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "<BNBT:logic:internet>",
-          "x": 214,
-          "y": 113
+          "name": "<BNBT:text:routerIP>",
+          "x": 201,
+          "y": 97
         }
       },
       {
@@ -98,8 +98,8 @@
           "width": 35,
           "height": 20,
           "name": "On",
-          "x": 194,
-          "y": 128
+          "x": 193,
+          "y": 132
         }
       },
       {
@@ -112,8 +112,8 @@
           "width": 40,
           "height": 20,
           "name": "Off",
-          "x": 232,
-          "y": 128
+          "x": 231,
+          "y": 132
         }
       },
       {
@@ -125,8 +125,34 @@
             "falpha": 0.0
           },
           "name": "Laptop:",
-          "x": 155,
-          "y": 133
+          "x": 152,
+          "y": 138
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Laptop IP:",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Laptop IP:",
+          "x": 145,
+          "y": 108
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:text:assignedIP>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:text:assignedIP>",
+          "x": 201,
+          "y": 108
         }
       }
     ],

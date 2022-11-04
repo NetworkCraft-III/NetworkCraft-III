@@ -35,8 +35,8 @@ public class LaptopGUIScreen extends AbstractContainerScreen<LaptopGUIMenu> {
 		this.y = container.y;
 		this.z = container.z;
 		this.entity = container.entity;
-		this.imageWidth = 135;
-		this.imageHeight = 73;
+		this.imageWidth = 187;
+		this.imageHeight = 80;
 	}
 
 	private static final ResourceLocation texture = new ResourceLocation("networkcraftiii:textures/screens/laptop_gui.png");
@@ -74,16 +74,7 @@ public class LaptopGUIScreen extends AbstractContainerScreen<LaptopGUIMenu> {
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "Laptop:", 26, 6, -12829636);
-		this.font.draw(poseStack, "" + ((int) new Object() {
-			public double getValue(BlockPos pos, String tag) {
-				BlockEntity BlockEntity = world.getBlockEntity(pos);
-				if (BlockEntity != null)
-					return BlockEntity.getTileData().getDouble(tag);
-				return 0;
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "LaptopID")) + "", 68, 6, -12829636);
-		this.font.draw(poseStack, "Status:", 26, 18, -12829636);
+		this.font.draw(poseStack, "MAC:", 37, 6, -12829636);
 		this.font.draw(poseStack, "" + (new Object() {
 			public String getValue(BlockPos pos, String tag) {
 				BlockEntity BlockEntity = world.getBlockEntity(pos);
@@ -91,17 +82,35 @@ public class LaptopGUIScreen extends AbstractContainerScreen<LaptopGUIMenu> {
 					return BlockEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "status")) + "", 68, 18, -12829636);
-		this.font.draw(poseStack, "Internet:", 16, 29, -12829636);
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "macAddress")) + "", 63, 6, -12829636);
+		this.font.draw(poseStack, "Status:", 41, 39, -12829636);
 		this.font.draw(poseStack, "" + (new Object() {
-			public boolean getValue(BlockPos pos, String tag) {
+			public String getValue(BlockPos pos, String tag) {
 				BlockEntity BlockEntity = world.getBlockEntity(pos);
 				if (BlockEntity != null)
-					return BlockEntity.getTileData().getBoolean(tag);
-				return false;
+					return BlockEntity.getTileData().getString(tag);
+				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "internet")) + "", 68, 29, -12829636);
-		this.font.draw(poseStack, "Laptop:", 9, 49, -12829636);
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "status")) + "", 82, 39, -12829636);
+		this.font.draw(poseStack, "Router IP:", 25, 17, -12829636);
+		this.font.draw(poseStack, "" + (new Object() {
+			public String getValue(BlockPos pos, String tag) {
+				BlockEntity BlockEntity = world.getBlockEntity(pos);
+				if (BlockEntity != null)
+					return BlockEntity.getTileData().getString(tag);
+				return "";
+			}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "routerIP")) + "", 81, 17, -12829636);
+		this.font.draw(poseStack, "Laptop:", 32, 58, -12829636);
+		this.font.draw(poseStack, "Laptop IP:", 25, 28, -12829636);
+		this.font.draw(poseStack, "" + (new Object() {
+			public String getValue(BlockPos pos, String tag) {
+				BlockEntity BlockEntity = world.getBlockEntity(pos);
+				if (BlockEntity != null)
+					return BlockEntity.getTileData().getString(tag);
+				return "";
+			}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "assignedIP")) + "", 81, 28, -12829636);
 	}
 
 	@Override
@@ -114,13 +123,13 @@ public class LaptopGUIScreen extends AbstractContainerScreen<LaptopGUIMenu> {
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + 48, this.topPos + 44, 35, 20, new TextComponent("On"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 73, this.topPos + 52, 35, 20, new TextComponent("On"), e -> {
 			if (true) {
 				NetworkcraftiiiMod.PACKET_HANDLER.sendToServer(new LaptopGUIButtonMessage(0, x, y, z));
 				LaptopGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 86, this.topPos + 44, 40, 20, new TextComponent("Off"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 111, this.topPos + 52, 40, 20, new TextComponent("Off"), e -> {
 			if (true) {
 				NetworkcraftiiiMod.PACKET_HANDLER.sendToServer(new LaptopGUIButtonMessage(1, x, y, z));
 				LaptopGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);

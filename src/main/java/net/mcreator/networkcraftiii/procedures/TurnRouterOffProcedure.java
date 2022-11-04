@@ -20,13 +20,13 @@ public class TurnRouterOffProcedure {
 					return blockEntity.getTileData().getBoolean(tag);
 				return false;
 			}
-		}.getValue(world, new BlockPos(x, y, z), "routerIsOn")) == true) {
+		}.getValue(world, new BlockPos(x, y, z), "IsOn")) == true) {
 			if (!world.isClientSide()) {
 				BlockPos _bp = new BlockPos(x, y, z);
 				BlockEntity _blockEntity = world.getBlockEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_blockEntity != null)
-					_blockEntity.getTileData().putBoolean("routerIsOn", (false));
+					_blockEntity.getTileData().putBoolean("IsOn", (false));
 				if (world instanceof Level _level)
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
@@ -39,16 +39,16 @@ public class TurnRouterOffProcedure {
 				if (world instanceof Level _level)
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
+			RemoveInternetProcedure.execute(world, x, y, z, entity);
 			if (entity instanceof Player _player && !_player.level.isClientSide())
 				_player.displayClientMessage(new TextComponent(("Successfully turned router " + (new Object() {
-					public double getValue(LevelAccessor world, BlockPos pos, String tag) {
+					public String getValue(LevelAccessor world, BlockPos pos, String tag) {
 						BlockEntity blockEntity = world.getBlockEntity(pos);
 						if (blockEntity != null)
-							return blockEntity.getTileData().getDouble(tag);
-						return -1;
+							return blockEntity.getTileData().getString(tag);
+						return "";
 					}
-				}.getValue(world, new BlockPos(x, y, z), "routerID")) + " off.")), (false));
-			RemoveInternetProcedure.execute(world, x, y, z, entity);
+				}.getValue(world, new BlockPos(x, y, z), "routerIP")) + " off.")), (false));
 		}
 		if (entity instanceof Player _player)
 			_player.closeContainer();

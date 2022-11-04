@@ -13,26 +13,26 @@
       {
         "type": "label",
         "data": {
-          "text": "Router:",
+          "text": "RouterIP:",
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Router:",
-          "x": 156,
+          "name": "RouterIP:",
+          "x": 164,
           "y": 78
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "<BNBT:integer:routerID>",
+          "text": "<BNBT:text:routerIP>",
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "<BNBT:integer:routerID>",
-          "x": 198,
+          "name": "<BNBT:text:routerIP>",
+          "x": 215,
           "y": 78
         }
       },
@@ -45,8 +45,8 @@
             "falpha": 0.0
           },
           "name": "Router Status:",
-          "x": 156,
-          "y": 90
+          "x": 158,
+          "y": 91
         }
       },
       {
@@ -59,7 +59,7 @@
           },
           "name": "<BNBT:text:routerStatus>",
           "x": 234,
-          "y": 90
+          "y": 91
         }
       },
       {
@@ -71,8 +71,8 @@
             "falpha": 0.0
           },
           "name": "Internet Status:",
-          "x": 155,
-          "y": 102
+          "x": 148,
+          "y": 104
         }
       },
       {
@@ -84,8 +84,8 @@
             "falpha": 0.0
           },
           "name": "<BNBT:text:internetStatus>",
-          "x": 244,
-          "y": 102
+          "x": 234,
+          "y": 104
         }
       },
       {
@@ -97,8 +97,8 @@
             "falpha": 0.0
           },
           "name": "Internet:",
-          "x": 148,
-          "y": 122
+          "x": 151,
+          "y": 124
         }
       },
       {
@@ -110,8 +110,8 @@
             "falpha": 0.0
           },
           "name": "Router:",
-          "x": 158,
-          "y": 145
+          "x": 161,
+          "y": 146
         }
       },
       {
@@ -124,8 +124,8 @@
           "width": 35,
           "height": 20,
           "name": "On",
-          "x": 198,
-          "y": 140
+          "x": 200,
+          "y": 142
         }
       },
       {
@@ -138,8 +138,8 @@
           "width": 40,
           "height": 20,
           "name": "Off",
-          "x": 236,
-          "y": 140
+          "x": 238,
+          "y": 142
         }
       },
       {
@@ -152,8 +152,8 @@
           "width": 35,
           "height": 20,
           "name": "On",
-          "x": 198,
-          "y": 117
+          "x": 200,
+          "y": 119
         }
       },
       {
@@ -166,8 +166,8 @@
           "width": 40,
           "height": 20,
           "name": "Off",
-          "x": 236,
-          "y": 117
+          "x": 238,
+          "y": 119
         }
       }
     ],

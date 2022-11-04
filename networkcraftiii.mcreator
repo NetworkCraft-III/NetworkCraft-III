@@ -367,35 +367,6 @@
       "path": "~/Router"
     },
     {
-      "name": "RouterBlockAdded",
-      "type": "procedure",
-      "sortid": 21,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "router_block_added",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Router"
-    },
-    {
       "name": "ProvideInternet",
       "type": "procedure",
       "sortid": 28,
@@ -468,6 +439,35 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "router_block_destroyed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Router"
+    },
+    {
+      "name": "RouterBlockAdded",
+      "type": "procedure",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "router_block_added",
       "metadata": {
         "dependencies": [
           {

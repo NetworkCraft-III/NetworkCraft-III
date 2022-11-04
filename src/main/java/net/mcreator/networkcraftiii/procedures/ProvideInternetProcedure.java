@@ -6,10 +6,13 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.util.Mth;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.networkcraftiii.init.NetworkcraftiiiModBlocks;
+
+import java.util.Random;
 
 public class ProvideInternetProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -25,7 +28,7 @@ public class ProvideInternetProcedure {
 					return blockEntity.getTileData().getBoolean(tag);
 				return false;
 			}
-		}.getValue(world, new BlockPos(x, y, z), "routerIsOn")) == true) {
+		}.getValue(world, new BlockPos(x, y, z), "IsOn")) == true) {
 			if (!world.isClientSide()) {
 				BlockPos _bp = new BlockPos(x, y, z);
 				BlockEntity _blockEntity = world.getBlockEntity(_bp);
@@ -58,13 +61,59 @@ public class ProvideInternetProcedure {
 											return blockEntity.getTileData().getBoolean(tag);
 										return false;
 									}
-								}.getValue(world, new BlockPos(x + sx, y + sy, z + sz), "isOn")) == true) {
+								}.getValue(world, new BlockPos(x + sx, y + sy, z + sz), "isOn")) == true && (new Object() {
+									public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+										BlockEntity blockEntity = world.getBlockEntity(pos);
+										if (blockEntity != null)
+											return blockEntity.getTileData().getString(tag);
+										return "";
+									}
+								}.getValue(world, new BlockPos(x + sx, y + sy, z + sz), "routerIP")).equals("null")) {
 							if (!world.isClientSide()) {
 								BlockPos _bp = new BlockPos(x + sx, y + sy, z + sz);
 								BlockEntity _blockEntity = world.getBlockEntity(_bp);
 								BlockState _bs = world.getBlockState(_bp);
 								if (_blockEntity != null)
-									_blockEntity.getTileData().putBoolean("internet", (true));
+									_blockEntity.getTileData().putString("subNet", (new Object() {
+										public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+											BlockEntity blockEntity = world.getBlockEntity(pos);
+											if (blockEntity != null)
+												return blockEntity.getTileData().getString(tag);
+											return "";
+										}
+									}.getValue(world, new BlockPos(x, y, z), "routerSubNet")));
+								if (world instanceof Level _level)
+									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+							}
+							if (!world.isClientSide()) {
+								BlockPos _bp = new BlockPos(x + sx, y + sy, z + sz);
+								BlockEntity _blockEntity = world.getBlockEntity(_bp);
+								BlockState _bs = world.getBlockState(_bp);
+								if (_blockEntity != null)
+									_blockEntity.getTileData().putString("routerIP", (new Object() {
+										public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+											BlockEntity blockEntity = world.getBlockEntity(pos);
+											if (blockEntity != null)
+												return blockEntity.getTileData().getString(tag);
+											return "";
+										}
+									}.getValue(world, new BlockPos(x, y, z), "routerIP")));
+								if (world instanceof Level _level)
+									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+							}
+							if (!world.isClientSide()) {
+								BlockPos _bp = new BlockPos(x + sx, y + sy, z + sz);
+								BlockEntity _blockEntity = world.getBlockEntity(_bp);
+								BlockState _bs = world.getBlockState(_bp);
+								if (_blockEntity != null)
+									_blockEntity.getTileData().putString("assignedIP", ((new Object() {
+										public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+											BlockEntity blockEntity = world.getBlockEntity(pos);
+											if (blockEntity != null)
+												return blockEntity.getTileData().getString(tag);
+											return "";
+										}
+									}.getValue(world, new BlockPos(x, y, z), "routerSubNet")) + "" + Mth.nextInt(new Random(), 1, 255)));
 								if (world instanceof Level _level)
 									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 							}

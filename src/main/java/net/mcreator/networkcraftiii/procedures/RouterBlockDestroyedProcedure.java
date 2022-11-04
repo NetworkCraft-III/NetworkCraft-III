@@ -31,13 +31,39 @@ public class RouterBlockDestroyedProcedure {
 											return blockEntity.getTileData().getBoolean(tag);
 										return false;
 									}
-								}.getValue(world, new BlockPos(x + sx, y + sy, z + sz), "isOn")) == true) {
+								}.getValue(world, new BlockPos(x + sx, y + sy, z + sz), "isOn")) == true
+								&& ("deleted routerIP from destrroyed block").equals(new Object() {
+									public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+										BlockEntity blockEntity = world.getBlockEntity(pos);
+										if (blockEntity != null)
+											return blockEntity.getTileData().getString(tag);
+										return "";
+									}
+								}.getValue(world, new BlockPos(x + sx, y + sy, z + sz), "subNet"))) {
 							if (!world.isClientSide()) {
 								BlockPos _bp = new BlockPos(x + sx, y + sy, z + sz);
 								BlockEntity _blockEntity = world.getBlockEntity(_bp);
 								BlockState _bs = world.getBlockState(_bp);
 								if (_blockEntity != null)
-									_blockEntity.getTileData().putBoolean("internet", (false));
+									_blockEntity.getTileData().putString("subNet", "null");
+								if (world instanceof Level _level)
+									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+							}
+							if (!world.isClientSide()) {
+								BlockPos _bp = new BlockPos(x + sx, y + sy, z + sz);
+								BlockEntity _blockEntity = world.getBlockEntity(_bp);
+								BlockState _bs = world.getBlockState(_bp);
+								if (_blockEntity != null)
+									_blockEntity.getTileData().putString("routerIP", "null");
+								if (world instanceof Level _level)
+									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+							}
+							if (!world.isClientSide()) {
+								BlockPos _bp = new BlockPos(x + sx, y + sy, z + sz);
+								BlockEntity _blockEntity = world.getBlockEntity(_bp);
+								BlockState _bs = world.getBlockState(_bp);
+								if (_blockEntity != null)
+									_blockEntity.getTileData().putString("assignedIP", "null");
 								if (world instanceof Level _level)
 									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 							}

@@ -14,6 +14,8 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.networkcraftiii.world.inventory.LaptopGUIMenu;
 import net.mcreator.networkcraftiii.procedures.TurnLaptopOnProcedure;
 import net.mcreator.networkcraftiii.procedures.TurnLaptopOffProcedure;
+import net.mcreator.networkcraftiii.procedures.DisconnectProcedure;
+import net.mcreator.networkcraftiii.procedures.ConnectProcedure;
 import net.mcreator.networkcraftiii.NetworkcraftiiiMod;
 
 import java.util.function.Supplier;
@@ -70,6 +72,14 @@ public class LaptopGUIButtonMessage {
 		if (buttonID == 1) {
 
 			TurnLaptopOffProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 2) {
+
+			ConnectProcedure.execute(world, x, y, z, entity, guistate);
+		}
+		if (buttonID == 3) {
+
+			DisconnectProcedure.execute(world, x, y, z, entity);
 		}
 	}
 

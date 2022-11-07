@@ -47,7 +47,17 @@ public class TurnLaptopOnProcedure {
 							return blockEntity.getTileData().getString(tag);
 						return "";
 					}
-				}.getValue(world, new BlockPos(x, y, z), "macAddress")) + " on")), (false));
+				}.getValue(world, new BlockPos(x, y, z), "macAddress")) + " on.")), (false));
+		} else {
+			if (entity instanceof Player _player && !_player.level.isClientSide())
+				_player.displayClientMessage(new TextComponent(("Laptop " + (new Object() {
+					public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+						BlockEntity blockEntity = world.getBlockEntity(pos);
+						if (blockEntity != null)
+							return blockEntity.getTileData().getString(tag);
+						return "";
+					}
+				}.getValue(world, new BlockPos(x, y, z), "macAddress")) + " already on.")), (false));
 		}
 		if (entity instanceof Player _player)
 			_player.closeContainer();

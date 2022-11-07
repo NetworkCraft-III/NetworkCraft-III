@@ -25,25 +25,7 @@ public class RemoveInternetProcedure {
 					return blockEntity.getTileData().getBoolean(tag);
 				return false;
 			}
-		}.getValue(world, new BlockPos(x, y, z), "IsOn")) == true) {
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putBoolean("providingInternet", (false));
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putString("internetStatus", "Off");
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
+		}.getValue(world, new BlockPos(x, y, z), "isOn")) == true) {
 			sx = -10;
 			for (int index0 = 0; index0 < (int) (20); index0++) {
 				sy = -10;
@@ -52,13 +34,6 @@ public class RemoveInternetProcedure {
 					for (int index2 = 0; index2 < (int) (20); index2++) {
 						if ((world.getBlockState(new BlockPos(x + sx, y + sy, z + sz))).getBlock() == NetworkcraftiiiModBlocks.LAPTOP.get()
 								&& (new Object() {
-									public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
-										BlockEntity blockEntity = world.getBlockEntity(pos);
-										if (blockEntity != null)
-											return blockEntity.getTileData().getBoolean(tag);
-										return false;
-									}
-								}.getValue(world, new BlockPos(x + sx, y + sy, z + sz), "isOn")) == true && (new Object() {
 									public String getValue(LevelAccessor world, BlockPos pos, String tag) {
 										BlockEntity blockEntity = world.getBlockEntity(pos);
 										if (blockEntity != null)
@@ -78,7 +53,7 @@ public class RemoveInternetProcedure {
 								BlockEntity _blockEntity = world.getBlockEntity(_bp);
 								BlockState _bs = world.getBlockState(_bp);
 								if (_blockEntity != null)
-									_blockEntity.getTileData().putString("subNet", "null");
+									_blockEntity.getTileData().putString("subNet", "");
 								if (world instanceof Level _level)
 									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 							}
@@ -87,7 +62,7 @@ public class RemoveInternetProcedure {
 								BlockEntity _blockEntity = world.getBlockEntity(_bp);
 								BlockState _bs = world.getBlockState(_bp);
 								if (_blockEntity != null)
-									_blockEntity.getTileData().putString("routerIP", "null");
+									_blockEntity.getTileData().putString("routerIP", "");
 								if (world instanceof Level _level)
 									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 							}
@@ -96,7 +71,7 @@ public class RemoveInternetProcedure {
 								BlockEntity _blockEntity = world.getBlockEntity(_bp);
 								BlockState _bs = world.getBlockState(_bp);
 								if (_blockEntity != null)
-									_blockEntity.getTileData().putString("assignedIP", "null");
+									_blockEntity.getTileData().putString("assignedIP", "");
 								if (world instanceof Level _level)
 									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 							}

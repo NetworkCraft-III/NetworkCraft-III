@@ -10,6 +10,7 @@ import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.Minecraft;
 
@@ -27,6 +28,7 @@ public class LaptopGUIScreen extends AbstractContainerScreen<LaptopGUIMenu> {
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
+	EditBox specifiedRouter;
 
 	public LaptopGUIScreen(LaptopGUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -35,8 +37,8 @@ public class LaptopGUIScreen extends AbstractContainerScreen<LaptopGUIMenu> {
 		this.y = container.y;
 		this.z = container.z;
 		this.entity = container.entity;
-		this.imageWidth = 187;
-		this.imageHeight = 80;
+		this.imageWidth = 219;
+		this.imageHeight = 129;
 	}
 
 	private static final ResourceLocation texture = new ResourceLocation("networkcraftiii:textures/screens/laptop_gui.png");
@@ -46,6 +48,7 @@ public class LaptopGUIScreen extends AbstractContainerScreen<LaptopGUIMenu> {
 		this.renderBackground(ms);
 		super.render(ms, mouseX, mouseY, partialTicks);
 		this.renderTooltip(ms, mouseX, mouseY);
+		specifiedRouter.render(ms, mouseX, mouseY, partialTicks);
 	}
 
 	@Override
@@ -64,17 +67,20 @@ public class LaptopGUIScreen extends AbstractContainerScreen<LaptopGUIMenu> {
 			this.minecraft.player.closeContainer();
 			return true;
 		}
+		if (specifiedRouter.isFocused())
+			return specifiedRouter.keyPressed(key, b, c);
 		return super.keyPressed(key, b, c);
 	}
 
 	@Override
 	public void containerTick() {
 		super.containerTick();
+		specifiedRouter.tick();
 	}
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "MAC:", 37, 6, -12829636);
+		this.font.draw(poseStack, "MAC Address:", 23, 16, -12829636);
 		this.font.draw(poseStack, "" + (new Object() {
 			public String getValue(BlockPos pos, String tag) {
 				BlockEntity BlockEntity = world.getBlockEntity(pos);
@@ -82,8 +88,8 @@ public class LaptopGUIScreen extends AbstractContainerScreen<LaptopGUIMenu> {
 					return BlockEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "macAddress")) + "", 63, 6, -12829636);
-		this.font.draw(poseStack, "Status:", 41, 39, -12829636);
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "macAddress")) + "", 92, 16, -12829636);
+		this.font.draw(poseStack, "Status:", 49, 6, -12829636);
 		this.font.draw(poseStack, "" + (new Object() {
 			public String getValue(BlockPos pos, String tag) {
 				BlockEntity BlockEntity = world.getBlockEntity(pos);
@@ -91,8 +97,8 @@ public class LaptopGUIScreen extends AbstractContainerScreen<LaptopGUIMenu> {
 					return BlockEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "status")) + "", 82, 39, -12829636);
-		this.font.draw(poseStack, "Router IP:", 25, 17, -12829636);
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "status")) + "", 92, 6, -12829636);
+		this.font.draw(poseStack, "Router IP:", 33, 37, -12829636);
 		this.font.draw(poseStack, "" + (new Object() {
 			public String getValue(BlockPos pos, String tag) {
 				BlockEntity BlockEntity = world.getBlockEntity(pos);
@@ -100,9 +106,9 @@ public class LaptopGUIScreen extends AbstractContainerScreen<LaptopGUIMenu> {
 					return BlockEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "routerIP")) + "", 81, 17, -12829636);
-		this.font.draw(poseStack, "Laptop:", 32, 58, -12829636);
-		this.font.draw(poseStack, "Laptop IP:", 25, 28, -12829636);
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "routerIP")) + "", 92, 38, -12829636);
+		this.font.draw(poseStack, "Laptop:", 48, 58, -12829636);
+		this.font.draw(poseStack, "Laptop IP:", 33, 27, -12829636);
 		this.font.draw(poseStack, "" + (new Object() {
 			public String getValue(BlockPos pos, String tag) {
 				BlockEntity BlockEntity = world.getBlockEntity(pos);
@@ -110,7 +116,9 @@ public class LaptopGUIScreen extends AbstractContainerScreen<LaptopGUIMenu> {
 					return BlockEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "assignedIP")) + "", 81, 28, -12829636);
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "assignedIP")) + "", 92, 27, -12829636);
+		this.font.draw(poseStack, "Connect:", 42, 82, -12829636);
+		this.font.draw(poseStack, "Router IP:", 32, 107, -12829636);
 	}
 
 	@Override
@@ -123,16 +131,54 @@ public class LaptopGUIScreen extends AbstractContainerScreen<LaptopGUIMenu> {
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + 73, this.topPos + 52, 35, 20, new TextComponent("On"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 88, this.topPos + 54, 35, 20, new TextComponent("On"), e -> {
 			if (true) {
 				NetworkcraftiiiMod.PACKET_HANDLER.sendToServer(new LaptopGUIButtonMessage(0, x, y, z));
 				LaptopGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 111, this.topPos + 52, 40, 20, new TextComponent("Off"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 127, this.topPos + 54, 40, 20, new TextComponent("Off"), e -> {
 			if (true) {
 				NetworkcraftiiiMod.PACKET_HANDLER.sendToServer(new LaptopGUIButtonMessage(1, x, y, z));
 				LaptopGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
+			}
+		}));
+		specifiedRouter = new EditBox(this.font, this.leftPos + 88, this.topPos + 102, 120, 20, new TextComponent("000.000.000.000")) {
+			{
+				setSuggestion("000.000.000.000");
+			}
+
+			@Override
+			public void insertText(String text) {
+				super.insertText(text);
+				if (getValue().isEmpty())
+					setSuggestion("000.000.000.000");
+				else
+					setSuggestion(null);
+			}
+
+			@Override
+			public void moveCursorTo(int pos) {
+				super.moveCursorTo(pos);
+				if (getValue().isEmpty())
+					setSuggestion("000.000.000.000");
+				else
+					setSuggestion(null);
+			}
+		};
+		guistate.put("text:specifiedRouter", specifiedRouter);
+		specifiedRouter.setMaxLength(32767);
+		this.addWidget(this.specifiedRouter);
+		this.addRenderableWidget(new Button(this.leftPos + 88, this.topPos + 78, 51, 20, new TextComponent("Connect"), e -> {
+			if (true) {
+				NetworkcraftiiiMod.PACKET_HANDLER.sendToServer(new LaptopGUIButtonMessage(2, x, y, z));
+				LaptopGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);
+			}
+		}));
+		this.addRenderableWidget(new Button(this.leftPos + 143, this.topPos + 78, 67, 20, new TextComponent("Disconnect"), e -> {
+			if (true) {
+				NetworkcraftiiiMod.PACKET_HANDLER.sendToServer(new LaptopGUIButtonMessage(3, x, y, z));
+				LaptopGUIButtonMessage.handleButtonAction(entity, 3, x, y, z);
 			}
 		}));
 	}

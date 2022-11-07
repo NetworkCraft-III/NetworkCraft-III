@@ -35,8 +35,8 @@ public class RouterGUIScreen extends AbstractContainerScreen<RouterGUIMenu> {
 		this.y = container.y;
 		this.z = container.z;
 		this.entity = container.entity;
-		this.imageWidth = 143;
-		this.imageHeight = 98;
+		this.imageWidth = 142;
+		this.imageHeight = 90;
 	}
 
 	private static final ResourceLocation texture = new ResourceLocation("networkcraftiii:textures/screens/router_gui.png");
@@ -74,7 +74,7 @@ public class RouterGUIScreen extends AbstractContainerScreen<RouterGUIMenu> {
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "RouterIP:", 22, 7, -12829636);
+		this.font.draw(poseStack, "RouterIP:", 8, 8, -12829636);
 		this.font.draw(poseStack, "" + (new Object() {
 			public String getValue(BlockPos pos, String tag) {
 				BlockEntity BlockEntity = world.getBlockEntity(pos);
@@ -82,8 +82,8 @@ public class RouterGUIScreen extends AbstractContainerScreen<RouterGUIMenu> {
 					return BlockEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "routerIP")) + "", 73, 7, -12829636);
-		this.font.draw(poseStack, "Router Status:", 16, 20, -12829636);
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "routerIP")) + "", 61, 8, -12829636);
+		this.font.draw(poseStack, "Router Status:", 8, 21, -12829636);
 		this.font.draw(poseStack, "" + (new Object() {
 			public String getValue(BlockPos pos, String tag) {
 				BlockEntity BlockEntity = world.getBlockEntity(pos);
@@ -91,18 +91,9 @@ public class RouterGUIScreen extends AbstractContainerScreen<RouterGUIMenu> {
 					return BlockEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "routerStatus")) + "", 92, 20, -12829636);
-		this.font.draw(poseStack, "Internet Status:", 6, 33, -12829636);
-		this.font.draw(poseStack, "" + (new Object() {
-			public String getValue(BlockPos pos, String tag) {
-				BlockEntity BlockEntity = world.getBlockEntity(pos);
-				if (BlockEntity != null)
-					return BlockEntity.getTileData().getString(tag);
-				return "";
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "internetStatus")) + "", 92, 33, -12829636);
-		this.font.draw(poseStack, "Internet:", 9, 53, -12829636);
-		this.font.draw(poseStack, "Router:", 19, 75, -12829636);
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "routerStatus")) + "", 86, 21, -12829636);
+		this.font.draw(poseStack, "Router:", 8, 42, -12829636);
+		this.font.draw(poseStack, "Devices:", 7, 66, -12829636);
 	}
 
 	@Override
@@ -115,28 +106,22 @@ public class RouterGUIScreen extends AbstractContainerScreen<RouterGUIMenu> {
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + 58, this.topPos + 71, 35, 20, new TextComponent("On"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 54, this.topPos + 37, 35, 20, new TextComponent("On"), e -> {
 			if (true) {
 				NetworkcraftiiiMod.PACKET_HANDLER.sendToServer(new RouterGUIButtonMessage(0, x, y, z));
 				RouterGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 96, this.topPos + 71, 40, 20, new TextComponent("Off"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 93, this.topPos + 37, 40, 20, new TextComponent("Off"), e -> {
 			if (true) {
 				NetworkcraftiiiMod.PACKET_HANDLER.sendToServer(new RouterGUIButtonMessage(1, x, y, z));
 				RouterGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 58, this.topPos + 48, 35, 20, new TextComponent("On"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 54, this.topPos + 61, 67, 20, new TextComponent("Disconnect"), e -> {
 			if (true) {
 				NetworkcraftiiiMod.PACKET_HANDLER.sendToServer(new RouterGUIButtonMessage(2, x, y, z));
 				RouterGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);
-			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 96, this.topPos + 48, 40, 20, new TextComponent("Off"), e -> {
-			if (true) {
-				NetworkcraftiiiMod.PACKET_HANDLER.sendToServer(new RouterGUIButtonMessage(3, x, y, z));
-				RouterGUIButtonMessage.handleButtonAction(entity, 3, x, y, z);
 			}
 		}));
 	}

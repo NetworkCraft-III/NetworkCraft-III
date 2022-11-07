@@ -3,8 +3,8 @@
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 143,
-    "height": 98,
+    "width": 142,
+    "height": 90,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -19,8 +19,8 @@
             "falpha": 0.0
           },
           "name": "RouterIP:",
-          "x": 164,
-          "y": 78
+          "x": 151,
+          "y": 83
         }
       },
       {
@@ -32,8 +32,8 @@
             "falpha": 0.0
           },
           "name": "<BNBT:text:routerIP>",
-          "x": 215,
-          "y": 78
+          "x": 204,
+          "y": 83
         }
       },
       {
@@ -45,8 +45,8 @@
             "falpha": 0.0
           },
           "name": "Router Status:",
-          "x": 158,
-          "y": 91
+          "x": 151,
+          "y": 96
         }
       },
       {
@@ -58,47 +58,8 @@
             "falpha": 0.0
           },
           "name": "<BNBT:text:routerStatus>",
-          "x": 234,
-          "y": 91
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Internet Status:",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Internet Status:",
-          "x": 148,
-          "y": 104
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "<BNBT:text:internetStatus>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "<BNBT:text:internetStatus>",
-          "x": 234,
-          "y": 104
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Internet:",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Internet:",
-          "x": 151,
-          "y": 124
+          "x": 229,
+          "y": 96
         }
       },
       {
@@ -110,8 +71,8 @@
             "falpha": 0.0
           },
           "name": "Router:",
-          "x": 161,
-          "y": 146
+          "x": 151,
+          "y": 117
         }
       },
       {
@@ -124,8 +85,8 @@
           "width": 35,
           "height": 20,
           "name": "On",
-          "x": 200,
-          "y": 142
+          "x": 197,
+          "y": 112
         }
       },
       {
@@ -138,36 +99,35 @@
           "width": 40,
           "height": 20,
           "name": "Off",
-          "x": 238,
-          "y": 142
+          "x": 236,
+          "y": 112
         }
       },
       {
         "type": "button",
         "data": {
-          "text": "On",
-          "onClick": {
-            "name": "ProvideInternet"
-          },
-          "width": 35,
-          "height": 20,
-          "name": "On",
-          "x": 200,
-          "y": 119
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Off",
+          "text": "Disconnect",
           "onClick": {
             "name": "RemoveInternet"
           },
-          "width": 40,
+          "width": 67,
           "height": 20,
-          "name": "Off",
-          "x": 238,
-          "y": 119
+          "name": "Disconnect",
+          "x": 197,
+          "y": 136
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Devices:",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Devices:",
+          "x": 150,
+          "y": 141
         }
       }
     ],

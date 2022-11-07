@@ -20,13 +20,13 @@ public class TurnRouterOffProcedure {
 					return blockEntity.getTileData().getBoolean(tag);
 				return false;
 			}
-		}.getValue(world, new BlockPos(x, y, z), "IsOn")) == true) {
+		}.getValue(world, new BlockPos(x, y, z), "isOn")) == true) {
 			if (!world.isClientSide()) {
 				BlockPos _bp = new BlockPos(x, y, z);
 				BlockEntity _blockEntity = world.getBlockEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_blockEntity != null)
-					_blockEntity.getTileData().putBoolean("IsOn", (false));
+					_blockEntity.getTileData().putBoolean("isOn", (false));
 				if (world instanceof Level _level)
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
@@ -49,6 +49,9 @@ public class TurnRouterOffProcedure {
 						return "";
 					}
 				}.getValue(world, new BlockPos(x, y, z), "routerIP")) + " off.")), (false));
+		} else {
+			if (entity instanceof Player _player && !_player.level.isClientSide())
+				_player.displayClientMessage(new TextComponent("Router is already off."), (false));
 		}
 		if (entity instanceof Player _player)
 			_player.closeContainer();

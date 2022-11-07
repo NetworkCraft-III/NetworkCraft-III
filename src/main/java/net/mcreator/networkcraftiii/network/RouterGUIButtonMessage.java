@@ -15,7 +15,6 @@ import net.mcreator.networkcraftiii.world.inventory.RouterGUIMenu;
 import net.mcreator.networkcraftiii.procedures.TurnRouterOnProcedure;
 import net.mcreator.networkcraftiii.procedures.TurnRouterOffProcedure;
 import net.mcreator.networkcraftiii.procedures.RemoveInternetProcedure;
-import net.mcreator.networkcraftiii.procedures.ProvideInternetProcedure;
 import net.mcreator.networkcraftiii.NetworkcraftiiiMod;
 
 import java.util.function.Supplier;
@@ -74,10 +73,6 @@ public class RouterGUIButtonMessage {
 			TurnRouterOffProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 2) {
-
-			ProvideInternetProcedure.execute(world, x, y, z, entity);
-		}
-		if (buttonID == 3) {
 
 			RemoveInternetProcedure.execute(world, x, y, z, entity);
 		}

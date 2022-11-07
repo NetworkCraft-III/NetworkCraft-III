@@ -26,7 +26,7 @@ public class TurnLaptopOffProcedure {
 				BlockEntity _blockEntity = world.getBlockEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_blockEntity != null)
-					_blockEntity.getTileData().putString("subNet", "null");
+					_blockEntity.getTileData().putString("subNet", "");
 				if (world instanceof Level _level)
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
@@ -35,7 +35,7 @@ public class TurnLaptopOffProcedure {
 				BlockEntity _blockEntity = world.getBlockEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_blockEntity != null)
-					_blockEntity.getTileData().putString("assignedIP", "null");
+					_blockEntity.getTileData().putString("assignedIP", "");
 				if (world instanceof Level _level)
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
@@ -44,7 +44,7 @@ public class TurnLaptopOffProcedure {
 				BlockEntity _blockEntity = world.getBlockEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_blockEntity != null)
-					_blockEntity.getTileData().putString("routerIP", "null");
+					_blockEntity.getTileData().putString("routerIP", "");
 				if (world instanceof Level _level)
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
@@ -67,14 +67,24 @@ public class TurnLaptopOffProcedure {
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
 			if (entity instanceof Player _player && !_player.level.isClientSide())
-				_player.displayClientMessage(new TextComponent(("Successfully turned laptop off. Block State: " + (new Object() {
-					public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+				_player.displayClientMessage(new TextComponent(("Successfully turned laptop " + (new Object() {
+					public String getValue(LevelAccessor world, BlockPos pos, String tag) {
 						BlockEntity blockEntity = world.getBlockEntity(pos);
 						if (blockEntity != null)
-							return blockEntity.getTileData().getBoolean(tag);
-						return false;
+							return blockEntity.getTileData().getString(tag);
+						return "";
 					}
-				}.getValue(world, new BlockPos(x, y, z), "isOn")))), (false));
+				}.getValue(world, new BlockPos(x, y, z), "macAddress")) + " off.")), (false));
+		} else {
+			if (entity instanceof Player _player && !_player.level.isClientSide())
+				_player.displayClientMessage(new TextComponent(("Laptop " + (new Object() {
+					public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+						BlockEntity blockEntity = world.getBlockEntity(pos);
+						if (blockEntity != null)
+							return blockEntity.getTileData().getString(tag);
+						return "";
+					}
+				}.getValue(world, new BlockPos(x, y, z), "macAddress")) + " already off.")), (false));
 		}
 		if (entity instanceof Player _player)
 			_player.closeContainer();

@@ -3,8 +3,8 @@
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 187,
-    "height": 80,
+    "width": 219,
+    "height": 129,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -13,14 +13,14 @@
       {
         "type": "label",
         "data": {
-          "text": "MAC:",
+          "text": "MAC Address:",
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "MAC:",
-          "x": 157,
-          "y": 86
+          "name": "MAC Address:",
+          "x": 127,
+          "y": 72
         }
       },
       {
@@ -32,8 +32,8 @@
             "falpha": 0.0
           },
           "name": "<BNBT:text:macAddress>",
-          "x": 183,
-          "y": 86
+          "x": 196,
+          "y": 72
         }
       },
       {
@@ -45,8 +45,8 @@
             "falpha": 0.0
           },
           "name": "Status:",
-          "x": 161,
-          "y": 119
+          "x": 153,
+          "y": 62
         }
       },
       {
@@ -58,8 +58,8 @@
             "falpha": 0.0
           },
           "name": "<BNBT:text:status>",
-          "x": 202,
-          "y": 119
+          "x": 196,
+          "y": 62
         }
       },
       {
@@ -71,8 +71,8 @@
             "falpha": 0.0
           },
           "name": "Router IP:",
-          "x": 145,
-          "y": 97
+          "x": 137,
+          "y": 93
         }
       },
       {
@@ -84,8 +84,8 @@
             "falpha": 0.0
           },
           "name": "<BNBT:text:routerIP>",
-          "x": 201,
-          "y": 97
+          "x": 196,
+          "y": 94
         }
       },
       {
@@ -98,8 +98,8 @@
           "width": 35,
           "height": 20,
           "name": "On",
-          "x": 193,
-          "y": 132
+          "x": 192,
+          "y": 110
         }
       },
       {
@@ -113,7 +113,7 @@
           "height": 20,
           "name": "Off",
           "x": 231,
-          "y": 132
+          "y": 110
         }
       },
       {
@@ -126,7 +126,7 @@
           },
           "name": "Laptop:",
           "x": 152,
-          "y": 138
+          "y": 114
         }
       },
       {
@@ -138,8 +138,8 @@
             "falpha": 0.0
           },
           "name": "Laptop IP:",
-          "x": 145,
-          "y": 108
+          "x": 137,
+          "y": 83
         }
       },
       {
@@ -151,8 +151,73 @@
             "falpha": 0.0
           },
           "name": "<BNBT:text:assignedIP>",
-          "x": 201,
-          "y": 108
+          "x": 196,
+          "y": 83
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Connect:",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Connect:",
+          "x": 146,
+          "y": 138
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "000.000.000.000",
+          "width": 120,
+          "height": 20,
+          "name": "specifiedRouter",
+          "x": 192,
+          "y": 158
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Router IP:",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Router IP:",
+          "x": 136,
+          "y": 163
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Connect",
+          "onClick": {
+            "name": "Connect"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "Connect",
+          "x": 192,
+          "y": 134
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Disconnect",
+          "onClick": {
+            "name": "Disconnect"
+          },
+          "width": 67,
+          "height": 20,
+          "name": "Disconnect",
+          "x": 247,
+          "y": 134
         }
       }
     ],

@@ -15,7 +15,7 @@
  - When connected to a network, a Laptop Block will be assigned an IP address associated with the Router Block it's connected to.
  - Laptop Blocks can only connect to a Router Block if it's within a specified range(10 blocks) of that Router Block.
  - Connections are refused if that connection's associated devices are not properly configured.
-#### - Created GUI interfaces for users to interact with devices (blocks).
+#### - Created GUIs for users to interact with devices (blocks).
  - Users can turn devices (blocks) off and on and connect to/disconnect from other devices.
  - Within a Router Block's GUI, a user can disconnect all devices connected to it.
  - Within a Laptop Block's GUI, a user can input IP addresses they'd like the Laptop Block to connect to.
